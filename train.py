@@ -679,9 +679,9 @@ def train(nb_epoch, batch_size, store_name, start_epoch=0, num_class=0, data_pat
     trained_model = torch.load('./' + store_name + '/model.pth')
 
     if args.set == 'SFD':
-        test_folders = ['A', 'B', 'L']
+        test_folders = ['StoA', 'StoB', 'StoL']
     elif args.set == 'AUCD':
-        test_folders = ['S', 'B', 'L']
+        test_folders = ['AtoB', 'AtoS', 'AtoL']
     else:
         raise ValueError(f"Unknown dataset set: {args.set}")
 
