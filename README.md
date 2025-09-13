@@ -132,3 +132,10 @@ dmd_frames/
     python train.py --set SFD
    
 The weights and training/testing results will be automatically saved in the `results` folder.
+
+
+### Zero-shot Cross-Device Evaluation
+
+Edit `ROOT_JSON_DIR`, `ROOT_FRAMES_DIR`, and `CKPT_PROPOSED` in `eval_dmd.py`, then run:
+
+    python eval_dmd.py
