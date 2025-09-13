@@ -78,4 +78,4 @@ AtoS / AtoB / AtoL (and StoA / StoB / StoL) denote synthetic cross-appearance te
     python train.py --set AUCD
     python train.py --set SFD
    
-   
+The weights and training/testing results will be automatically saved in the `results` folder.
