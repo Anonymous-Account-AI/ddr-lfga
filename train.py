@@ -722,7 +722,7 @@ if __name__ == '__main__':
 
     # Start training with fixed parameters
     train(
-        nb_epoch=1,                 # Total number of epochs
+        nb_epoch=100,                 # Total number of epochs
         batch_size=16,                # Batch size
         store_name=experiment_result_path,  # Directory to save models and logs
         start_epoch=0,                # Start from scratch
