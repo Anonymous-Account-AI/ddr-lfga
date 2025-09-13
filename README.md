@@ -24,7 +24,7 @@ We use public driver distraction recognition datasets `AUC Distracted Driver (AU
 
 For zero-shot video evaluation we use `Driver Monitoring Dataset (DMD)`.
 
-For AUC-DDD and SFD, please organize the images as:
+-   For `AUC-DDD` and `SFD`, please organize the images as:
   ```
 datasets/organized/
 ├── AUCD
@@ -72,6 +72,59 @@ datasets/organized/
 ```
 
 AtoS / AtoB / AtoL (and StoA / StoB / StoL) denote synthetic cross-appearance test sets: we perform photometric remapping via neural style transfer on images from the source dataset (A = AUC-DDD, S = SFD) to simulate appearance changes under different camera/ISP pipelines and lighting conditions. Specifically, AtoS remaps AUCD images to the SFD camera/ISP style, AtoB remaps them to the iPhone 13 (bright sunlight) style, and AtoL remaps them to the Anero Car DVR (low light) style; StoA / StoB / StoL are defined analogously (with SFD as the source). These sets are used for single-source domain generalization evaluation (no target-domain labels or adaptation), for testing only, with labels identical to the originals; each directory is organized directly by the 10 class names.
+
+
+
+-   For `DMD`, download the dataset and extract the `.tar.gz` archives into a folder named `dmd`. Then decode each video into frames and organize them as:
+```
+dmd_frames/
+├── gA/
+│   ├── 1/
+│   │   ├── s1/
+│   │   │   └── gA_1_s1_2019-03-08T09;31;15+01;00_rgb_mosaic_body_frames_256/
+│   │   │       ├── frame_000000.jpg
+│   │   │       ├── frame_000001.jpg
+│   │   │       ├── frame_000002.jpg
+│   │   │       ├── frame_000003.jpg
+│   │   │       ├── frame_000004.jpg
+│   │   │       ├── frame_000005.jpg
+│   │   │       ├── frame_000006.jpg
+│   │   │       ├── frame_000007.jpg
+│   │   │       ├── frame_000008.jpg
+│   │   │       ├── frame_000009.jpg
+│   │   │       └── … 
+│   │   ├── s2/
+│   │   │   └── gA_1_s2_…_rgb_mosaic_body_frames_256/
+│   │   │       ├── frame_000000.jpg
+│   │   │       ├── frame_000001.jpg
+│   │   │       └── …
+│   │   └── …
+│   ├── 2/
+│   │   ├── s1/
+│   │   │   └── gA_2_s1_…_rgb_mosaic_body_frames_256/
+│   │   │       ├── frame_000000.jpg
+│   │   │       └── …
+│   │   └── …
+│   └── …
+├── gB/
+│   ├── 1/
+│   │   ├── s1/
+│   │   │   └── gB_1_s1_…_rgb_mosaic_body_frames_256/
+│   │   │       ├── frame_000000.jpg
+│   │   │       └── …
+│   │   └── …
+│   └── …
+├── gC/
+│   └── …
+├── gE/
+│   └── …
+├── gF/
+│   └── …
+└── gZ/
+    └── …
+```
+    
+
 
 ### Train
 
